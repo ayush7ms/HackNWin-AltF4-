@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 15% 50%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 220 20% 7%;
+
+    --success: 142 71% 45%;
+    --success-foreground: 220 20% 7%;
+
+    --border: 220 16% 18%;
+    --input: 220 16% 18%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 20% 5%;
+    --sidebar-foreground: 210 20% 80%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 16% 12%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 220 16% 14%;
+    --sidebar-ring: 199 89% 48%;
+
+    --severity-critical: 0 72% 51%;
+    --severity-high: 25 95% 53%;
+    --severity-medium: 38 92% 50%;
+    --severity-low: 142 71% 45%;
+
+    --glow-primary: 0 0 20px hsl(199 89% 48% / 0.3);
+    --glow-danger: 0 0 20px hsl(0 72% 51% / 0.4);
+  }
+
+  .dark {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .pulse-danger {
+    animation: pulse-danger 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+
+  .glow-danger {
+    box-shadow: var(--glow-danger);
+  }
+
+  .scanline {
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(199 89% 48% / 0.03) 2px,
+      hsl(199 89% 48% / 0.03) 4px
+    );
+  }
+}
+
+@keyframes pulse-danger {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 8px hsl(0 72% 51% / 0.4);
+  }
+  50% {
+    opacity: 0.85;
+    box-shadow: 0 0 24px hsl(0 72% 51% / 0.7);
+  }
+}
