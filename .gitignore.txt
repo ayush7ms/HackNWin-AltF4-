@@ -1,0 +1,28 @@
+# Python Virtual Environment (The heavy folder)
+.venv/
+venv/
+env/
+ENV/
+
+# Python Cache (Temporary files)
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment Variables (Keep your API keys private!)
+.env
+
+# AI Models & Large Data (Usually downloaded via code)
+*.pt
+*.onnx
+*.weights
+
+# Multimedia (Test videos/images)
+*.mp4
+*.avi
+*.jpg
+*.png
+
+# OS Specific
+.DS_Store
+Thumbs.db
